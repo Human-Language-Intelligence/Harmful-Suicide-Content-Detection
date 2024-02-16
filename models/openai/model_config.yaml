@@ -1,0 +1,10 @@
+MODEL_PARAMS:
+  gpt-3.5-turbo-16k-0613:
+    temperature: 0.0
+    max_tokens: 128
+  gpt-4-0613:
+    temperature: 0.0
+    max_tokens: 128
+  gpt-4-1106-preview:
+    temperature: 0.0
+    max_tokens: 128

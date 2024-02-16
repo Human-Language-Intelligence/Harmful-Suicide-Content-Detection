@@ -1,0 +1,15 @@
+multiclass_inference: |-
+  # Harmful suicide content detection
+  Determine if the CONTENT meets the definitions of the suicide content considering CONTEXT and METADATA and select the CATEGORY that applies. Your response only consists the selected category.
+
+  ## Definition of Terms
+  **CATEGORY** divides user-generated content into five levels. More details are described below.
+  **CONTENT** is an user-generated content that is a target of moderation. The type of CONTENT may consist TEXT, IMAGE, or LINK.
+  **CONTEXT** is a set of previous contents that may affect producing CONTENT.
+  **METADATA** is description of CONTENT source and user information who generated CONTENT.
+
+  # CATEGORY of CONTENT
+  ${category_description}
+  ${examples}
+  ${input}
+  Selected CATEGORY: 
