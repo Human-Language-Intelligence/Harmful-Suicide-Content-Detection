@@ -5,6 +5,7 @@ from typing import Any, Dict, List, Optional, Union
 
 from loguru import logger
 import openai
+from openai import AsyncOpenAI
 
 
 def read_json(filepath: str) -> Dict[Any, Any]:
@@ -13,13 +14,14 @@ def read_json(filepath: str) -> Dict[Any, Any]:
 
 
 config = read_json(os.path.join(os.path.dirname(__file__), "openai_config.json"))
-openai.api_key = config["api_key"]
-
+#openai.api_key = config["api_key"]
+client = AsyncOpenAI(api_key = config["api_key"])
 
 async def api_query(
     model: str,
     prompt: Union[str, List[Dict[str, str]]],
     temperature: float = 0.0,
+    seed: int = 42,
     top_p: float = 1.0,
     max_tokens: int = 512,
     presence_penalty: float = 0.0,
@@ -46,11 +48,14 @@ async def api_query(
             "gpt-3.5-turbo",
             "gpt-3.5-turbo-16k",
             "gpt-4-1106-preview",
+            "gpt-4-turbo-2024-04-09"
         ]:
-            response = await openai.ChatCompletion.acreate(
+            #response = await openai.ChatCompletion.acreate(
+            response = await client.chat.completions.create(
                 model=model,
                 messages=prompt,
                 temperature=temperature,
+                seed=seed,
                 top_p=top_p,
                 max_tokens=max_tokens,
                 presence_penalty=presence_penalty,
@@ -59,6 +64,9 @@ async def api_query(
             )
             # from functools import reduce
             # return_text = reduce(lambda x, y: x + y, [choice["message"]["content"] for choice in response["choices"]], '')
+            response = response.model_dump_json(indent=2)
+            response = json.loads(response)
+            
             return_text = response["choices"][0]["message"]["content"]
             return_texts += return_text
             finish_reason = response["choices"][0]["finish_reason"]

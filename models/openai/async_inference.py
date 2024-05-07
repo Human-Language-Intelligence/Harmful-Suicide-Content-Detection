@@ -1,6 +1,6 @@
-from typing import Optional, Tuple
+from typing import Optional, Tuple, List
 
-from projects.models.gpt.async_request import api_query
+from projects.models.gpt.new_async_request import api_query
 
 
 async def request_chatgpt(
@@ -8,8 +8,11 @@ async def request_chatgpt(
     system: str,
     user: str,
     temperature: float = 0.0,
+    seed: int = 42,
     top_p: float = 1.0,
     max_tokens: int = 2048,
+    images: List[str] = [],
+    image_types: List[str] = [],
     presence_penalty: float = 0.0,
     frequency_penalty: float = 0.0,
     assistant: Optional[str] = None,
@@ -28,7 +31,8 @@ async def request_chatgpt(
         "gpt-4-32k",
         "gpt-3.5-turbo",
         "gpt-3.5-turbo-16k",
-        "gpt-4-1106-preview"
+        "gpt-4-1106-preview",
+        "gpt-4-turbo-2024-04-09"
     ], "Not in supported ChatGPT models"
 
     if system == "":
@@ -38,6 +42,27 @@ async def request_chatgpt(
             {"role": "system", "content": system},
             {"role": "user", "content": user},
         ]
+    
+    if images != []:
+        user_message = {
+            "role": "user",
+            "content": [
+                {
+                    'type': 'text',
+                    'text': user,
+                }
+            ]
+        }
+        for image, image_type in zip(images, image_types):
+            user_message['content'].append({
+                'type': 'image_url',
+                'image_url': {
+                    'url': f"data:{image_type};base64,{image}",
+                    'detail': 'high',
+                }
+            })
+
+        prompt[-1] = user_message
 
     if assistant is not None and assistant_user is not None:
         prompt.append({"role": "assistant", "content": assistant})
@@ -47,6 +72,7 @@ async def request_chatgpt(
         model=model,
         prompt=prompt,
         temperature=temperature,
+        seed = seed,
         top_p=top_p,
         max_tokens=max_tokens,
         presence_penalty=presence_penalty,
