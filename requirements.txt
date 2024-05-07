@@ -1,0 +1,14 @@
+transformers
+scipy
+loguru
+openai
+streamlit
+natsort
+urllib3==1.26.15
+overrides
+pyyaml
+flask
+scikit-learn
+tweepy
+pydrive
+pydantic
