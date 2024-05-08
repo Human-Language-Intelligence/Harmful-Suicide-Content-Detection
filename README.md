@@ -13,4 +13,4 @@ Succinctly, the agreement requires that researchers
 
 Researchers interested in obtaining the Harmful Suicide Content Detection benchmark may submit a data request form to be provided with the data usage agreement and further information (IRB) to [google form link].
 
-[google form link]: https://forms.gle/zaXufX6UXr6ajLug7
+[google form link]: https://forms.gle/HAccC2xkzAvsS94x6
