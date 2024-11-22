@@ -1,4 +1,4 @@
-# harmful_suicide_detection
+# Harmful Suicide Content Detection Benchmark
 
 ## Overview
 This repo provides implementation of Harmful Suicide Detection.
