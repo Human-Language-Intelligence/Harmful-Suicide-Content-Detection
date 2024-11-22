@@ -18,7 +18,7 @@ Succinctly, the agreement requires that researchers
 * make no attempt to link users in the dataset with any external information (e.g., an account on another website)
 * do not share any portion of the data, including example posts or excerpts from posts, with any other party
 
-Researchers interested in obtaining the Harmful Suicide Content Detection benchmark may submit a data request form to be provided with the data usage agreement and further information (IRB) to [google form link].
+Researchers interested in obtaining the Harmful Suicide Content Detection benchmark may submit **a data request form to be provided with the data usage agreement [google form link]** with **IRB document**.
 
 ## Data Records
 
