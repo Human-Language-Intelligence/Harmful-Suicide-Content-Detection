@@ -2,6 +2,7 @@
 
 ## Overview
 This repo provides source code, dataset explanations and instructions on how to apply for the Harmful Suicide Content Detection Benchmark (through data usage agreement).
+This repo corresponds to the paper: Iterative LLM-Guided Sampling and Expert-annotated Benchmark Corpus for Harmful Suicide Content Detection (preprint, JMIR Medical Informatics, DOI: 10.2196/73725) – see https://preprints.jmir.org/preprint/73725
 
 ## Abstract
 Harmful suicide content on the Internet is a significant risk factor inducing suicidal thoughts and behaviors among vulnerable populations.
@@ -43,6 +44,13 @@ Researchers interested in obtaining the Harmful Suicide Content Detection benchm
 | - label_category          | Category of the suicide content post. User-generated contents are divided into five categories depending on whether they are harmful or illegal. It also considers how the posts will affect other users.                                                  | String        |
 | - label_subcategory       | A subitem of a category is a finer classification depending on the content of user-generated content. User-generated content with different types of content can belong to the same category; therefore, they can be further subdivided into different subcategories. | String        |
 | - label_rationale         | An explanation for why the expert classified the post on its label (the category and subcategory). Rationales are needed so that people without medical knowledge can clearly understand the reasons for classification. Rationales should explain medical terminology to a level that a layperson can understand, but be concise for good readability. | String        |
+
+## Data Request and Review Process
+
+Researchers interested in obtaining the Harmful Suicide Content Detection benchmark may submit a data request form, along with their IRB documentation, through the provided Google Form link.
+All requests will be manually reviewed by the authors to ensure compliance with ethical and privacy considerations.
+
+If you do not receive any response or follow-up within two weeks after submission, please contact Prof. JinYeong Bak (jy.bak@skku.edu) directly so that we can review your request in a timely manner.
 
 ## Citation
 
