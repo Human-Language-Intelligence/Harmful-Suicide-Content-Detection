@@ -1,4 +1,4 @@
-# Iterative Large Language Model-Guided Sampling and Expert-Annotated Benchmark Corpus for Harmful Suicide Content Detection: Development and Validation of a Benchmark Dataset
+# Iterative Large Language Model-Guided Sampling and Expert-Annotated Benchmark Corpus for Harmful Suicide Content Detection: Development and Validation Study
 
 ## Overview
 This repo provides source code, dataset explanations and instructions on how to apply for the Harmful Suicide Content Detection Benchmark (through data usage agreement).
