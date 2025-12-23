@@ -52,6 +52,11 @@ All requests will be manually reviewed by the authors to ensure compliance with 
 
 If you do not receive any response or follow-up within two weeks after submission, please contact Prof. JinYeong Bak (jy.bak@skku.edu) directly so that we can review your request in a timely manner.
 
+## ETC
+
+The metadata (links or tweet ID) of online content used for this benchmark can be founded in https://doi.org/10.7910/DVN/YAULAD
+
+
 ## Citation
 
 
